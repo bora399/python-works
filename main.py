@@ -1,88 +1,88 @@
 import random
 import time
-#Taş Kağıt Makas Algoritması
-# Taş > Makas / Taş < Kağıt / Kağıt > Taş / Kağıt < Makas / Makas > Kağıt / Makas < Taş 
-#Taş Kağıt Makas Algoritması
+#Rock Paper Scissors Algorithm
+# Rock > Scissors / Rock < Paper / Paper > Rock / Paper < Scissors / Scissors > Paper / Scissors < Rock 
+#Rock Paper Scissors Algorithm
 
-#Genel Değişkenler - Sorular
-isim = input("İsminiz Nedir ? ")
-tur = int(input("Kaç tur oynamak istersiniz : "))
+#Variables - Questions
+name = input("What's your name ? ")
+tour = int(input("How many tours do you want to play ?"))
 i=0
-oyuncuSayi = 0
-pcSayi = 0
-kalanTur = 0
-myList = ["Taş","Kağıt","Makas"]
-#Genel Değişkenler - Sorular
+playerPoint = 0
+computerPoint = 0
+remainingTour = 0
+myList = ["Rock","Paper","Scissors"]
+#Variables - Questions
 
-#While Döngüsü
-while i < tur:
-    secim = input("Seçiminizi Yapınız 'Taş','Kağıt','Makas' :  ")
-    secim2 = secim.capitalize()#İlk harfi büyütüyoruz, koşul ifadesi içinde yaparsak eşitliği algılamıyor
-    pcSecim = random.choice(myList)
-    if secim2 == pcSecim:
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
-        time.sleep(1)#1 Saniye bekletiyor
-        print("Berabere, bu el sayılmayacak !")
-        print("Kalan Tur Sayısı : {}".format(tur-i))
-        print()
-    elif secim2 == "Taş" or secim2 == "taş" and pcSecim == "Makas":
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
+#While Loop
+while i < tour:
+    choice = input("Your Choice /'Rock'/ /'Paper'/ /'Scissors'/ :  ")
+    choice2 = choice.capitalize()#To capitalize the first letter
+    computerChoice = random.choice(myList)
+    if choice2 == computerChoice:
+        print("Computer Choice : {}".format(computerChoice))
         time.sleep(1)
-        print("{} Kazandı !".format(isim))
-        i+=1
-        oyuncuSayi += 1
-        print("Kalan Tur Sayısı : {}".format(tur-i))
+        print("Draw ! This tour won't count !")
+        print("Remained Tour : {}".format(tour-i))
         print()
-    elif secim2 == "Kağıt" or secim2 == "kağıt" and pcSecim == "Taş":
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
+    elif choice2 == "Rock" or choice2 == "rock" and computerChoice == "Scissors":
+        print("Computer Choice : {}".format(computerChoice))
         time.sleep(1)
-        print("{} Kazandı !".format(isim))
+        print("{} Won !".format(name))
         i+=1
-        oyuncuSayi += 1
-        print("Kalan Tur Sayısı : {}".format(tur-i))
+        playerPoint += 1
+        print("Remained Tour : {}".format(tour-i))
         print()
-    elif secim2 == "Makas" or secim2 == "makas" and pcSecim == "Kağıt":
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
+    elif choice2 == "Paper" or choice2 == "paper" and computerChoice == "Rock":
+        print("Computer Choice : {}".format(computerChoice))
         time.sleep(1)
-        print("{} Kazandı !".format(isim))
+        print("{} Won !".format(name))
         i+=1
-        oyuncuSayi += 1
-        print("Kalan Tur Sayısı : {}".format(tur-i))
+        playerPoint += 1
+        print("Remained Tour : {}".format(tour-i))
         print()
-    elif pcSecim == "Taş" and secim2 == "Makas" or secim2 == "makas":
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
+    elif choice2 == "Scissors" or choice2 == "scissors" and computerChoice == "Paper":
+        print("Computer Choice : {}".format(computerChoice))
         time.sleep(1)
-        print("Bilgisayar Kazandı !")
+        print("{} Won !".format(name))
         i+=1
-        pcSayi += 1
-        print("Kalan Tur Sayısı : {}".format(tur-i))
+        playerPoint += 1
+        print("Remained Tour : {}".format(tour-i))
         print()
-    elif pcSecim == "Kağıt" and secim2 == "Taş" or secim2 == "taş":
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
+    elif computerChoice == "Rock" and choice2 == "Scissors" or choice2 == "scissors":
+        print("Computer Choice : {}".format(computerChoice))
         time.sleep(1)
-        print("Bilgisayar Kazandı !")
+        print("Computer Won !")
         i+=1
-        pcSayi += 1
-        print("Kalan Tur Sayısı : {}".format(tur-i))
+        computerPoint += 1
+        print("Remained Tour : {}".format(tour-i))
         print()
-    elif pcSecim == "Makas" and secim2 == "Kağıt" or secim2 == "kağıt":
-        print("Bilgisayar Seçimi : {}".format(pcSecim))
+    elif computerChoice == "Paper" and choice2 == "Rock" or choice2 == "rock":
+        print("Computer Choice : {}".format(computerChoice))
         time.sleep(1)
-        print("Bilgisayar Kazandı !")
+        print("Computer Won !")
         i+=1
-        pcSayi += 1
-        print("Kalan Tur Sayısı : {}".format(tur-i))
+        computerPoint += 1
+        print("Remained Tour : {}".format(tour-i))
         print()
-#While Döngüsü
+    elif computerChoice == "Scissors" and choice2 == "Paper" or choice2 == "paper":
+        print("Computer Choice : {}".format(computerChoice))
+        time.sleep(1)
+        print("Computer Won !")
+        i+=1
+        computerPoint += 1
+        print("Remained Tour : {}".format(tour-i))
+        print()
+#While Loop
 
-#Sonuç Ekranı
-if oyuncuSayi > pcSayi:
-    print("Oyuncu Kazandı !!! Oyuncu Skor : {} /// Bilgisayar Skor : {}".format(oyuncuSayi,pcSayi))
-elif pcSayi > oyuncuSayi:
-    print("Bilgisayar Kazandı !!! Bilgisayar Skor : {} /// Oyuncu Skor : {}".format(pcSayi,oyuncuSayi))
-elif oyuncuSayi == pcSayi:
-    print("Berabere !!! Oyuncu Skor : {} /// Bilgisayar Skor : {}".format(oyuncuSayi,pcSayi))
-#Sonuç Ekranı
+#Finish
+if playerPoint > computerPoint:
+    print("Player Won !!! Player Score : {} /// Computer Score : {}".format(playerPoint,computerPoint))
+elif computerPoint > playerPoint:
+    print("Computer Won !!! Computer Score : {} /// Player Score : {}".format(computerPoint,playerPoint))
+elif playerPoint == computerPoint:
+    print("Draw !!! Player Score : {} /// Computer Score : {}".format(playerPoint,computerPoint))
+#Finish
 
  
     
