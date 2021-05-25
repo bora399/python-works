@@ -1,5 +1,5 @@
-import requests
 from collections import Counter
+import requests
 import json
 
 
