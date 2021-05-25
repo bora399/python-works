@@ -33,4 +33,4 @@ class crimeReport():
 searchReport = crimeReport('city-of-london','all-crime','2020-02')
 print()
 crimeReportFull = Counter(searchReport.listReports())
-print("All crimes in London on February : {}".format(sum(crimeReportFull.values())))
+print("All crimes in London on February 2020 : {}".format(sum(crimeReportFull.values())))
