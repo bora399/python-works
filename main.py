@@ -1,5 +1,5 @@
-import random
 import time
+import random
 #Rock Paper Scissors Algorithm
 # Rock > Scissors / Rock < Paper / Paper > Rock / Paper < Scissors / Scissors > Paper / Scissors < Rock 
 #Rock Paper Scissors Algorithm
