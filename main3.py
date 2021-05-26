@@ -42,5 +42,4 @@ textfield = Text(tk, width=20, height=10, fg="black")
 textfield.grid(row=2, columnspan=2)
 #Show Calendar Area
 
-
 tk.mainloop()
